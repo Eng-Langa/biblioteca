@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+		<script type="text/javascript" th:src="@{/js/actions.js}"></script>
+		<title>SCEL: Registrar Empréstimo</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-dark">
+			<img th:src="@{/img/NavCPS.png}"/>
+			<img th:src="@{/img/NavFatec.png}"/>
+			<img th:src="@{/img/NavGoverno.png}"/>
+		</nav>
+	
+		<div class="container my-5">
+			<div class="col-md-5 mx-auto borderSCEL p-3">
+				<h3 style="color: white; text-align: center;">Empréstimo - Registrar</h3>
+				<br/>
+				<div class="colSCEL p-3">
+					<form action="#" th:action="@{/emprestimos/save}" th:object="${emprestimo}" method="post">
+						<label for="isbn" class="col-form-label">ISBN</label>
+						<input type="text" th:field="*{isbn}" class="form-control" id="isbn" placeholder="isbn">
+						<span th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}" class="text-warning"></span>
+						
+						<label for="ra" class="col-form-label">RA</label>
+						<input type="text" th:field="*{ra}" class="form-control" id="ra" placeholder="RA">
+						<span th:if="${#fields.hasErrors('ra')}" th:errors="*{ra}" class="text-warning"></span>
+						<div th:replace="fragments/alert"></div>
+						<br/>
+						
+						<input type="submit" class="btn btn-success float-sm-right" value="Registrar Empréstimo">
+						<a type="submit" class="btn btn-primary" th:href="@{/home/}">Home</a>
+					</form>
+				</div>
+			</div>
+			<h6 th:text="${message}" class="text-danger"></h6>
+		</div>
+		<div class="card-footer">Todos os direitos reservados - 2020</div>
+	</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Registar Emprestimo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+	<div th:insert="fragments/header :: header"></div>
+	<div class="container my-5">
+		<h3>Registar Emprestimo</h3>
+		<div class="card">
+			<div class="card-body">
+				<div class="col-md-10">
+					<form action="#" th:action="@{/add-lend}" th:object="${emprestimo}"
+						method="post">
+						<div class="row">
+
+							<div class="form-group col-md-8">
+								<label for="leitor" class="col-form-label">Leitor</label>
+								<select th:field ="*{leitores}" class="form-control" >
+   									<option th:each="leitor: ${leitores}" th:value="${leitor.id}" th:text = "${leitor.nome}"></option>
+								</select>
+							</div>	
+					
+							<div class="form-group col-md-8">
+								<label for="livro" class="col-form-label">Livro</label>
+								<select th:field ="*{livros}" class="form-control" >
+   									<option th:each="livro: ${livros}" th:value="${livro.id}" th:text = "${livro.nome}"></option>
+								</select>
+							</div>
+							
+							<div class="form-group col-md-8">
+								<label for="dataEmprestimo" class="col-form-label">Data Emprestimo</label>
+								<input type="date" th:field="*{dataEmprestimo}" class="form-control" id="dataEmprestimo" />
+							</div>
+						
+							<div class="form-group col-md-8">
+								<label for="dataDevolucaoPrevista" class="col-form-label">Data Devolucao Prevista</label>
+								<input type="date" th:field="*{dataDevolucaoPrevista}" class="form-control" id="dataDevolucaoPrevista" />
+							</div>
+
+							<div class="form-group col-md-8">
+								<label for="dataDevolucao" class="col-form-label">Data Devolucao</label>
+								<input type="date" th:field="*{dataDevolucao}" class="form-control" id="dataDevolucao" />
+							</div>
+							
+								
+							<div class="col-md-6">
+								<input type="submit" class="btn btn-primary" value=" Registrar ">
+							</div>
+
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:insert="fragments/footer :: footer"></div>
+</body>
+
+</html>

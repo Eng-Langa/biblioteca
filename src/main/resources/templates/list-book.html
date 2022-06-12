@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Todos Livros</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+	
+</head>
+<body>
+	<div th:insert="fragments/header :: header"></div>
+	<div class="container my-2">
+		<div class="card">
+			<div class="card-body">
+				<div class="container my-5">
+					<div class="col-md-12">
+						<div >
+							<table class="table table-striped table-responsive-md">
+								<thead>
+									<tr>
+										<th>ISBN </th>
+										<th>Categoria</th>
+										<th>Titulo</th>
+										<th>Autor</th>
+										<th>Editora</th>
+										<th>Serie</th>
+										<th>Descricao</th>
+								</tr>
+								</thead>
+								<tbody>
+									<tr >
+										<td th:text="${livro?.isbn}"></td>
+										<td th:text="${livro?.categorias[0].nome}"></td>
+										<td th:text="${livro?.titulo}"></td>
+										<td th:text="${livro?.autores[0].nome}"></td>
+										<td th:text="${livro?.editoras[0].nome}"></td>
+										<td th:text="${livro?.serialName}"></td>
+										<td th:text="${livro?.descricao}"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:insert="fragments/footer :: footer"></div>
+</body>
+
+</html>
