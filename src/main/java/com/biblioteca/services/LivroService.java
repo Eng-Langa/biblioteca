@@ -6,7 +6,7 @@ public interface LivroService {
 
 public List<Livro> findAllBooks();
 	
-	public List<Livro> searchBooks(String keyword);
+	/*public List<Livro> searchBooks(String keyword);*/
 
 	public Livro findBookById(Long id);
 

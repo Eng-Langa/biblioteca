@@ -26,14 +26,14 @@ public class LivroServiceImpl implements LivroService{
 		return livroRepository.findAll();
 	}
 
-	@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
-	@Override
-	public List<Livro> searchBooks(String keyword) {
+/*	@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
+	@Override*/
+	/*public List<Livro> searchBooks(String keyword) {
 		if (keyword != null) {
 			return livroRepository.search(keyword);
 		}
 		return livroRepository.findAll();
-	}
+	}*/
 
 	@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
 	@Override
