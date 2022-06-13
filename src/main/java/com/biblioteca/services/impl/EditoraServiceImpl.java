@@ -30,7 +30,7 @@ public class EditoraServiceImpl implements EditoraService {
 	@Override
 	public Editora findPublisherById(Long id) {
 		return editoraRepository.findById(id)
-				.orElseThrow(() -> new NotFoundException(String.format("Publisher not found  with ID %d", id)));
+				.orElseThrow(() -> new NotFoundException(String.format("EDITORA COM O ID NAO ENCONTRADA %d", id)));
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class EditoraServiceImpl implements EditoraService {
 	@Override
 	public void deletePublisher(Long id) {
 		final Editora editora = editoraRepository.findById(id)
-				.orElseThrow(() -> new NotFoundException(String.format("Publisher not found  with ID %d", id)));
+				.orElseThrow(() -> new NotFoundException(String.format("EDITORA COM O ID NAO ENCONTRADA  %d", id)));
 
 		editoraRepository.deleteById(editora.getId());
 	}
