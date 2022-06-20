@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Leitor</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2" align="center">
+
+<h3>Lista de Leitores</h3>
+<a th:href="@{/addnew}" class="btn btn-primary btn-sm mb-3" >Adicionar Leitor</a>
+	<table style="width:80%" border="1"
+		class = "table table-striped table-responsive-md">
+	<thead>
+<tr>
+	<th>Nome</th>
+	<th>Data de Nascimento</th>
+	<th>Documento</th>
+	<th>Numero de Documento</th>
+	<th>Nacionalidade</th>
+	<th>Cidade</th>
+	<th>Telefone</th>
+	<th>Accao</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="leitor:${allleitorlist}">
+		<td th:text="${leitor.nome}"></td>
+		<td th:text="${leitor.dataNasc}"></td>
+		<td th:text="${leitor.documento}"></td>
+		<td th:text="${leitor.nrDocumento}"></td>
+		<td th:text="${leitor.nacionalidade}"></td>
+		<td th:text="${leitor.cidade}"></td>
+		<td th:text="${leitor.telefone}"></td>
+		<td> <a th:href="@{/showFormForUpdate/{id}(id=${leitor.id})}"
+				class="btn btn-primary">Actualizar</a>
+				<a th:href="@{/deleteLeitor/{id}(id=${leitor.id})}"
+				class="btn btn-danger">Eliminar</a>
+	</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Sistema de Gestao e Controle da Biblioteca</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Sistema de Gestao e Controle da Biblioteca</h1>
+		<hr>
+		<h2>Actualizar Leitor</h2>
+
+		<form action="#" th:action="@{/save}" th:object="${leitor}"
+			method="POST">
+			
+			
+			<input type="hidden" th:field="*{id}" />
+			
+			<input type="text" th:field="*{nome}" class="form-control mb-4 col-4">
+								
+				<input type="Date" th:field="*{dataNasc}" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{documento}" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{nrDocumento}" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{nacionalidade}" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{cidade}" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{telefone}" class="form-control mb-4 col-4">
+				<button type="submit" class="btn btn-info col-2"> Actualizar</button>
+		</form>
+		
+		<hr>
+		
+		<a th:href = "@{/list-leitor}"> Voltar a lista</a>
+	</div>
+</body>
+</html>

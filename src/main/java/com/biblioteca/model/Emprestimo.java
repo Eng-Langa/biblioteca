@@ -1,4 +1,4 @@
-package com.biblioteca.model;
+/*package com.biblioteca.model;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -97,4 +97,4 @@ public Emprestimo() {
 		
 	}
 	
-}
+}*/
