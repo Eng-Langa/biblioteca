@@ -38,14 +38,7 @@ public class LivroController {
 		return "list-books";
 	}
 
-	@RequestMapping("/searchBook")
-	public String searchBook(@Param("keyword") String keyword, Model model) {
-		final List<Livro> livros = livroService.searchBooks(keyword);
-
-		model.addAttribute("livros", livros);
-		model.addAttribute("keyword", keyword);
-		return "list-books";
-	}
+	
 
 	@RequestMapping("/book/{id}")
 	public String findBookById(@PathVariable("id") Long id, Model model) {
