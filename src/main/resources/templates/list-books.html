@@ -28,10 +28,7 @@
 									<tr>
 										<th>ISBN </th>
 										<th>Titulo</th>
-										<th>Autor</th>
-										<th>Categoria</th>
-										<th>Editora</th>
-										<th>Serie</th>
+										<th>Detalhes</th>
 										<th>Descricao</th>
 										<th>Editar</th>
 										<th>Eliminar</th>
@@ -39,16 +36,16 @@
 								</thead>
 								<tbody>
 									<tr th:each="livro : ${livros}">
-										<td th:text="${livro?.isbn}"></td>
-										<td th:text="${livro?.titulo}"></td>
-										<td th:text="${livro?.autores}"></td>
+										<td th:text="${livro.isbn}"></td>
+										<td th:text="${livro.titulo}"></td>
+									<!--	<td th:text="${livro?.autores}"></td>
                		     				<td th:text="${livro?.categoriaLivro}"></td>
-                						<td th:text="${livro?.editoras}"></td>
-										<!--<td th:each="autor: ${autores}" th:value="${autor.id}" th:text="${livro?.autor.nome}"></td>
+                						<td th:text="${livro?.editoras}"></td> 
+										<td th:each="autor: ${autores}" th:value="${autor.id}" th:text="${livro?.autor.nome}"></td>
 										<td th:each="categoria: ${categorias}" th:value="${categoria.id}" th:text="${livro?.categoria.nome}"></td>
 										<td th:each="editora: ${editoras}" th:value="${editora.id}"th:text="${livro?.editora.nome}"></td>-->
-										<td th:text="${livro?.serialName}"></td>
-										<td th:text="${livro?.descricao}"></td>
+										<td th:text="${livro.serialName}"></td>
+										<td th:text="${livro.descricao}"></td>
 										<td><a th:href="@{/update/{id}(id=${livro.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
 										<td><a th:href="@{/remove-book/{id}(id=${livro.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
 									</tr>

@@ -10,10 +10,11 @@ public interface EmprestimoService {
 
 	public Emprestimo findLendById(Long id);
 
-	public void createLend(Emprestimo emprestimo);
+	public void save(Emprestimo emprestimo);
 
 	public void updateLend(Emprestimo emprestimo);
 
-	public void deleteLend(Long id); 
+	public void deleteLend(Long id);
+
 	
 }

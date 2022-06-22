@@ -88,7 +88,7 @@
 							th:each="error : ${#fields.errors('password')}"
 							th:text="${error}">Erro de Validacao</p>
 					</div>
-					<div class="form-group"
+					<!--<div class="form-group"
 						th:classappend="${#fields.hasErrors('confirmPassword')}? 'has-error':''">
 						<label for="confirmPassword" class="control-label">Confirmar
 							senha</label> <input id="confirmPassword" class="form-control"
@@ -96,7 +96,7 @@
 						<p class="error-message"
 							th:each="error : ${#fields.errors('confirmPassword')}"
 							th:text="${error}">Erro de Validacao</p>
-					</div>
+					</div>-->
 					<div class="form-group"
 						th:classappend="${#fields.hasErrors('terms')}? 'has-error':''">
 						<input id="terms" type="checkbox" th:field="*{terms}" />   <label

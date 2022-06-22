@@ -1,4 +1,4 @@
-/*package com.biblioteca.model;
+package com.biblioteca.model;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -34,7 +34,7 @@ public class Emprestimo {
 	@Column(name = "dataPevistaDevolucao", length = 250, nullable = false)
 	private Date dataPrevistaDevolucao;
 
-	@OneToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	/*@OneToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "leitor_emp", joinColumns = { @JoinColumn(name = "leitor_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "leitor_id") })
 	private Set<Leitor> leitores = new HashSet<Leitor>();
@@ -42,7 +42,7 @@ public class Emprestimo {
 	@OneToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "emprestimo_", joinColumns = { @JoinColumn(name = "livro_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "emprestimo_id") })
-	private Set<Livro> livros = new HashSet<Livro>();
+	private Set<Livro> livros = new HashSet<Livro>();*/
 
 	public Emprestimo( Date dataEmprestimo, Date dataPrevistaDevolucao) {
 		this.dataEmprestimo = dataEmprestimo;
@@ -97,4 +97,4 @@ public Emprestimo() {
 		
 	}
 	
-}*/
+}

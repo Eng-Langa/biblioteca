@@ -36,8 +36,13 @@ public class UserRegistrationController {
         BindingResult result) {
 
         User existing = userService.findByEmail(userDto.getEmail());
+        User existing1 = userService.findByEmail(userDto.getFirstName());
         if (existing != null) {
             result.rejectValue("email", null, "Ja Existe uma conta registada com esse email");
+        }
+        
+        if (existing1 != null) {
+            result.rejectValue("email", null, "Ja Existe uma conta registada com esse nome");
         }
 
         if (result.hasErrors()) {

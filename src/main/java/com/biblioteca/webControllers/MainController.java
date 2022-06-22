@@ -7,9 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 	
+	
+	UserRegistrationDto d= new UserRegistrationDto();
 	 @GetMapping("/")
 	    public String root() {
-	        return "index";
+	     
+		
+		 return "index";
+		 
 	    }
 
 	   @GetMapping("/login")
@@ -20,7 +25,9 @@ public class MainController {
 	   
 	    @GetMapping("/user")
 	    public String userIndex() {
-	        return "user/index";
+	    	
+	    	
+	    		return "user/index";
 	    }
 
 }

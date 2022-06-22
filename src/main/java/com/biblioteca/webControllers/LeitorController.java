@@ -32,13 +32,7 @@ public class LeitorController {
 			this.leitorService = leitorService;
 		}
 		
-		/*@RequestMapping("/leitores")
-		public String viewHomePage(Model model) {
-			final List<Leitor> leitor = leitorService.getAllLeitor();
-
-			model.addAttribute("allleitorlist", leitor);
-			return "list-leitor";
-		}*/
+		
 	
 		@GetMapping("/leitores")
 		public String viewHomePage(Model model) {
@@ -46,7 +40,7 @@ public class LeitorController {
 			return "list-leitor";
 		}
 
-		/*@GetMapping("/addnew")
+		@GetMapping("/addnew")
 		public String addNew(Model model) {
 			Leitor leitor = new Leitor();
 			model.addAttribute("leitor", leitor);
@@ -56,7 +50,7 @@ public class LeitorController {
 		@PostMapping("/save")
 		public String save(@ModelAttribute("leitor") Leitor leitor) {
 			leitorService.save(leitor);
-			return "redirect:/list-leitor";
+			return "redirect:/leitores";
 		}
 		
 	/*	@PostMapping("/save")
@@ -73,7 +67,7 @@ public class LeitorController {
 						HttpStatus.INTERNAL_SERVER_ERROR); //500-Internal Server Error
 			}
 			return resp;
-		}
+		}*/
 
 		@GetMapping("/showFormForUpdate/{id}")
 		public String updateForm(@PathVariable(value = "id") long id, Model model) {
@@ -85,9 +79,9 @@ public class LeitorController {
 		@GetMapping("/delete/{id}")
 		public String deleteThroughId(@PathVariable(value = "id") long id) {
 			leitorService.deleteViaId(id);
-			return "redirect:/list-leitor";
+			return "redirect:/";
 
-		}*/
+		}
 	}
 
 	
